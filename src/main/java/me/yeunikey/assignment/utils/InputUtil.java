@@ -27,11 +27,8 @@ public class InputUtil {
 
             List<Integer> grades = new ArrayList<>();
 
-            for (String grade : scanner.nextLine().split(" ")) {
-                if (grade.equalsIgnoreCase(""))
-                    continue;
-
-                grades.add(Integer.parseInt(grade));
+            while (scanner.hasNextInt()) {
+                grades.add(scanner.nextInt());
             }
 
             Student student = new Student(
@@ -44,7 +41,7 @@ public class InputUtil {
         return students;
     }
 
-    public static List<Teacher> loadTeachers(File file) {
+    public static List<Teacher> loadTeachers(File file) throws FileNotFoundException {
         Scanner scanner = new Scanner(file);
         List<Teacher> teachers = new ArrayList<>();
 
@@ -57,8 +54,13 @@ public class InputUtil {
             boolean gender = scanner.next().equalsIgnoreCase("Male");
 
             String subject = scanner.next();
+            int yearsOfExperience = scanner.nextInt();
+            int salary = scanner.nextInt();
 
-            // todo дописать надо это
+            Teacher teacher = new Teacher(
+                    name, surname, age, gender, subject, yearsOfExperience, salary
+            );
+            teachers.add(teacher);
 
         }
 
