@@ -25,14 +25,15 @@ public class AssignmentApplication implements Application {
             throw new RuntimeException("File not found");
         }
 
-        System.out.println("========- Test 1 -========");
+        System.out.println("========- Test 1 / All school members -========");
 
         /* Test 1 | Print all School members */
         for (Person person : school.getPersons()) {
             System.out.println(person);
         }
 
-        System.out.println("========- Test 2 -========");
+        System.out.println();
+        System.out.println("========- Test 2 / Calculate GPA -========");
 
         /* Test 2 | Print all Student gpa */
         for (Person person : school.getPersons()) {
@@ -42,7 +43,8 @@ public class AssignmentApplication implements Application {
             }
         }
 
-        System.out.println("========- Test 3 -========");
+        System.out.println();
+        System.out.println("========- Test 3 / Give raise method -========");
 
         /* Test 3 | Give raise method */
         for (Person person : school.getPersons()) {
